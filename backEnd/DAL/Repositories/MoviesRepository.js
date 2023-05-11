@@ -1,15 +1,19 @@
 const Movie = require('../Models/Movie');
 
 const queryAllMovies = async () => {
-    return await Movie.find();
+    return await Movie.find(); // todo: check the error
 }
 
-const queryMovieById = async (id) => {
-    return await Movie.findById(id);
+const queryMovieById = (id) => {
+    Movie.findById(id)
+        .then(movie => movie)
+        .catch(err => err); // todo: check the error
 }
 
-const queryMovieByName = async (movieName) => {
-    return await Movie.findOne({ name: movieName});
+const queryMovieByName = (movieName) => {
+    Movie.findOne({ name: movieName})
+        .then(movie => movie)
+        .catch(err => err); // todo: check the error
 }
 
 const createMovie = (movie) => {
@@ -18,7 +22,7 @@ const createMovie = (movie) => {
 
     newMovie.save()
         .then(result => result)
-        .catch(err => err);
+        .catch(err => err); // todo: check the error
 }
 
 const updateMovie = (movie) => {
@@ -27,13 +31,13 @@ const updateMovie = (movie) => {
 
     Movie.findByIdAndUpdate(movie.id, editedMovie)
         .then( result => result)
-        .catch( err => err);
+        .catch( err => err); // todo: check the error
 }
 
 const deleteMovie = (id) => {
     Movie.findByIdAndDelete(id)
         .then(result => result)
-        .catch(err => err);
+        .catch(err => err); // todo: check the error
 }
 
 module.exports = {
