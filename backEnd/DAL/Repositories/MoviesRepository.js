@@ -27,7 +27,7 @@ const createMovie = (movie) => {
 
 const updateMovie = (movie) => {
     const editedMovie = new Movie(movie);
-    if (!newMovie) throw new Error(`${movie.name} can not be edited. Please check it for valid info.`);
+    if (!editedMovie) throw new Error(`${movie.name} can not be edited. Please check it for valid info.`);
 
     Movie.findByIdAndUpdate(movie.id, editedMovie)
         .then( result => result)
