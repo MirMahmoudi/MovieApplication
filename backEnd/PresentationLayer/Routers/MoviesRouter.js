@@ -1,13 +1,13 @@
 const express = require('express');
 const moviesApiController = require('../ApiControllers/moviesApiController');
 
-const moviesApiRouter = express.Router();
+const moviesRouter = express.Router();
 
-moviesApiRouter.get('/api/movies', moviesApiController.accessingAllMovies);
-moviesApiRouter.get('/api/movies/:id', moviesApiController.accessingMovieById);
-moviesApiRouter.get('/api/movies/:movieName', moviesApiController.accessingMovieByName);
-moviesApiRouter.post('/api/movies/newMovie', moviesApiController.appendingMovie);
-moviesApiRouter.put('/api/movies/editMovie', moviesApiController.updatingMovie);
-moviesApiRouter.delete('/api/movies/delMovie/:id', moviesApiController.deletingMovie);
+moviesRouter.get('/api/movies', moviesApiController.accessingAllMovies);
+moviesRouter.get('/api/movies/:id', moviesApiController.accessingMovieById);
+moviesRouter.get('/api/movies/:movieName', moviesApiController.accessingMovieByName);
+moviesRouter.post('/api/movies/newMovie', moviesApiController.appendingMovie);
+moviesRouter.put('/api/movies/editMovie', moviesApiController.updatingMovie);
+moviesRouter.delete('/api/movies/delMovie/:id', moviesApiController.deletingMovie);
 
-module.exports = moviesApiRouter;
+module.exports = moviesRouter;
