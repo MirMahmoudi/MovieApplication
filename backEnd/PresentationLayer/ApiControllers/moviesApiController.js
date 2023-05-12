@@ -1,4 +1,4 @@
-const moviesService = require('../../BAL/Services/MoviesService');
+const moviesService = require('../../BAL/Services/moviesService');
 
 const accessingAllMovies = async (req, res) => {
     const movies = await moviesService.getAllMovies();
